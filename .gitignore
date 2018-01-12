@@ -25,4 +25,10 @@ android/playground/app/gradlew.bat
 android/playground/app/gradle/wrapper/gradle-wrapper.jar
 android/playground/app/gradle/wrapper/gradle-wrapper.properties
 
+.project
+.classpath
+.settings/
+android/app/src/main/assets/*
+ios/assets/*
+
 docs

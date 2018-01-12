@@ -226,12 +226,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 17E05FE81DF96DD600607B9A /* Build configuration list for PBXNativeTarget "HackerNews" */;
 			buildPhases = (
-				BD7AE412614B94FEDA664FA7 /* 📦 Check Pods Manifest.lock */,
+				BD7AE412614B94FEDA664FA7 /* [CP] Check Pods Manifest.lock */,
 				17E05FB71DF96DD600607B9A /* Sources */,
 				17E05FB81DF96DD600607B9A /* Frameworks */,
 				17E05FB91DF96DD600607B9A /* Resources */,
-				079BD74D140697E5F4A6E01C /* 📦 Embed Pods Frameworks */,
-				E5131A20CB20BE8609C9FCCF /* 📦 Copy Pods Resources */,
+				079BD74D140697E5F4A6E01C /* [CP] Embed Pods Frameworks */,
+				E5131A20CB20BE8609C9FCCF /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -264,11 +264,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 17E05FEE1DF96DD600607B9A /* Build configuration list for PBXNativeTarget "HackerNewsUITests" */;
 			buildPhases = (
-				1E82B827700BB076D4D4331F /* 📦 Check Pods Manifest.lock */,
+				1E82B827700BB076D4D4331F /* [CP] Check Pods Manifest.lock */,
 				17E05FDB1DF96DD600607B9A /* Sources */,
 				17E05FDC1DF96DD600607B9A /* Frameworks */,
 				17E05FDD1DF96DD600607B9A /* Resources */,
-				1E093CBE59C6B139E90321F6 /* 📦 Copy Pods Resources */,
+				1E093CBE59C6B139E90321F6 /* [CP] Copy Pods Resources */,
+				779192C9FD57864CFD46F045 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -354,14 +355,14 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		079BD74D140697E5F4A6E01C /* 📦 Embed Pods Frameworks */ = {
+		079BD74D140697E5F4A6E01C /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputPaths = (
 			);
-			name = "📦 Embed Pods Frameworks";
+			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -369,60 +370,89 @@
 			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-HackerNews/Pods-HackerNews-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
-		1E093CBE59C6B139E90321F6 /* 📦 Copy Pods Resources */ = {
+		1E093CBE59C6B139E90321F6 /* [CP] Copy Pods Resources */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-HackerNewsUITests/Pods-HackerNewsUITests-resources.sh",
+				"${PODS_ROOT}/../WeexSDK/WeexSDK/Resources/main.js",
+				"${PODS_ROOT}/../WeexSDK/WeexSDK/Resources/wx_load_error@3x.png",
 			);
-			name = "📦 Copy Pods Resources";
+			name = "[CP] Copy Pods Resources";
 			outputPaths = (
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-HackerNewsUITests/Pods-HackerNewsUITests-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
-		1E82B827700BB076D4D4331F /* 📦 Check Pods Manifest.lock */ = {
+		1E82B827700BB076D4D4331F /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-HackerNewsUITests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		779192C9FD57864CFD46F045 /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputPaths = (
 			);
-			name = "📦 Check Pods Manifest.lock";
+			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-HackerNewsUITests/Pods-HackerNewsUITests-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
-		BD7AE412614B94FEDA664FA7 /* 📦 Check Pods Manifest.lock */ = {
+		BD7AE412614B94FEDA664FA7 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
 			);
-			name = "📦 Check Pods Manifest.lock";
+			name = "[CP] Check Pods Manifest.lock";
 			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-HackerNews-checkManifestLockResult.txt",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
-		E5131A20CB20BE8609C9FCCF /* 📦 Copy Pods Resources */ = {
+		E5131A20CB20BE8609C9FCCF /* [CP] Copy Pods Resources */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-HackerNews/Pods-HackerNews-resources.sh",
+				"${PODS_ROOT}/../WeexSDK/WeexSDK/Resources/main.js",
+				"${PODS_ROOT}/../WeexSDK/WeexSDK/Resources/wx_load_error@3x.png",
 			);
-			name = "📦 Copy Pods Resources";
+			name = "[CP] Copy Pods Resources";
 			outputPaths = (
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
